@@ -9,14 +9,19 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Panel;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import lombok.Getter;
 
 public class SignInPage extends Panel {
 
+    @Getter
     private final JTextField idField = new JTextField(DEFAULT_COLUMN_LENGTH);
-    private final JTextField passwordField = new JTextField(DEFAULT_COLUMN_LENGTH);
+    @Getter
+    private final JPasswordField passwordField = new JPasswordField(DEFAULT_COLUMN_LENGTH);
 
     private final JButton signInButton = new JButton("sign in");
 
@@ -55,5 +60,25 @@ public class SignInPage extends Panel {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.insets = buttonInset;
         add(signInButton, gridBagConstraints);
+    }
+
+    public void viewEmployees(ActionListener actionListener) {
+//        final var password = new String(passwordField.getPassword());
+//        System.out.println(password);
+//        final var requestBody = new LoginRequest(idField.getText(), password);
+//        final Pair<Integer, String> response = RestService.sendPostRequest("admin", toJson(requestBody));
+//        if (response == null) {
+//            System.out.println("something went wrong");
+//            return;
+//        }
+//
+//        final int responseStatusCode = response.getKey();
+//        final String responseBody = response.getValue();
+//        if (responseStatusCode == 200) {
+//            signInButton.addActionListener(actionListener);
+//        } else {
+//            System.out.println("login or password was wrong");
+//        }
+        signInButton.addActionListener(actionListener);
     }
 }
