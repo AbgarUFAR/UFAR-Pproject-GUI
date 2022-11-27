@@ -63,22 +63,6 @@ public class SignInPage extends Panel {
     }
 
     public void viewEmployees(ActionListener actionListener) {
-//        final var password = new String(passwordField.getPassword());
-//        System.out.println(password);
-//        final var requestBody = new LoginRequest(idField.getText(), password);
-//        final Pair<Integer, String> response = RestService.sendPostRequest("admin", toJson(requestBody));
-//        if (response == null) {
-//            System.out.println("something went wrong");
-//            return;
-//        }
-//
-//        final int responseStatusCode = response.getKey();
-//        final String responseBody = response.getValue();
-//        if (responseStatusCode == 200) {
-//            signInButton.addActionListener(actionListener);
-//        } else {
-//            System.out.println("login or password was wrong");
-//        }
         signInButton.addActionListener(actionListener);
     }
 }
